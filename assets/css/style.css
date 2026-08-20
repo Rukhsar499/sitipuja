@@ -617,6 +617,11 @@
             height: auto;
             animation: pulseGlow 4s infinite;
         }
+        .durga-face-svgs {
+            width: 70px;
+            height: auto;
+            animation: pulseGlow 4s infinite;
+        }
 
         /* SOCIAL & ACTION BUTTONS */
         .social-btn {
@@ -697,7 +702,7 @@
 
         /* MAIN FOOTER CONTAINER WITH RED GRADIENT & ALPONA ART */
         .puja-footer {
-            background: linear-gradient(180deg, #570000 0%, var(--footer-bg-dark) 100%);
+            background: url('../img/footer-bg.png') no-repeat center center;
             color: var(--text-light);
             position: relative;
             overflow: hidden;
