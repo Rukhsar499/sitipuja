@@ -453,6 +453,8 @@
             position: relative;
             text-align: center;
             animation: floatHand 5s ease-in-out infinite;
+            margin-bottom: -100px;
+            z-index: 1;
         }
 
         .pass-hand-img {
@@ -591,11 +593,13 @@
 
         /* BOTTOM INFO CARDS (Dates, Time, Terms) */
         .bottom-info-box {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgb(255, 255, 255);
             border: 1.5px solid var(--gold-primary);
             border-radius: 16px;
             padding: 18px 10px;
             margin-top: 25px;
+            position: relative;
+            z-index: 2;
         }
 
         .info-card-title {
