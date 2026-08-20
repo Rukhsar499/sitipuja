@@ -24,6 +24,13 @@
             --gold-primary: #FFD700;
             --gold-accent: #D4AF37;
             --text-light: #F0E6D2;
+            --cream-bg-start: #FFFDF2;
+            --cream-bg-mid: #FFF5D0;
+            --cream-bg-end: #FFE893;
+            --gold-primary: #D4AF37;
+            --gold-bright: #FFD700;
+            --maroon-dark: #660000;
+            --maroon-title: #800000;
             
         }
 
@@ -898,4 +905,171 @@
             .footer-divider { display: none; }
             .corner-ornament { width: 45px; }
             .puja-footer { padding-top: 30px; }
+        }
+        /* CONTINUOUS ANIMATIONS */
+        @keyframes floatLotus {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1.5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes rotateAlpona {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseGlow {
+            0% { filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3)); }
+            50% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7)); }
+            100% { filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3)); }
+        }
+
+        /* PARTNERS SECTION CONTAINER */
+        .partners-section-wrapper {
+           background: radial-gradient(circle at center, var(--puja-cream-start) 0%, var(--puja-cream-mid) 60%, var(--puja-cream-end) 100%);
+          
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        /* Traditional Alpona Vector Background Pattern Overlay */
+        .alpona-bg-pattern {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            margin-top: -300px;
+            margin-left: -300px;
+            opacity: 0.06;
+            pointer-events: none;
+            animation: rotateAlpona 120s linear infinite;
+        }
+
+        /* ANIMATED SIDE LOTUS FLOWERS */
+        .side-lotus {
+            width: 140px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            animation: floatLotus 5s ease-in-out infinite;
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        .lotus-left {
+            left: 20px;
+        }
+
+        .lotus-right {
+            right: 20px;
+            transform: translateY(-50%) scaleX(-1);
+            animation-name: floatLotus;
+        }
+
+        /* INNER GOLDEN FRAME */
+        .partners-inner-frame {
+           
+            position: relative;
+            
+            backdrop-filter: blur(4px);
+            margin: 0 100px; /* Space for left and right lotus flowers */
+            
+        }
+
+        /* INNER FRAME CORNER ORNAMENTS */
+        .frame-ornament-tl, .frame-ornament-tr, .frame-ornament-bl, .frame-ornament-br {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            fill: var(--gold-primary);
+        }
+
+        .frame-ornament-tl { top: -2px; left: -2px; }
+        .frame-ornament-tr { top: -2px; right: -2px; transform: scaleX(-1); }
+        .frame-ornament-bl { bottom: -2px; left: -2px; transform: scaleY(-1); }
+        .frame-ornament-br { bottom: -2px; right: -2px; transform: scale(-1); }
+
+        /* HEADING & SWIRL ORNAMENTS */
+        .title-wrapper {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, var(--cream-bg-start) 40%, var(--cream-bg-mid) 100%);
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            white-space: nowrap;
+        }
+
+        .partners-heading {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--maroon-title);
+            margin: 0;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px rgba(255, 215, 0, 0.8);
+        }
+
+        .heading-swirl {
+            width: 35px;
+            height: auto;
+            fill: var(--gold-primary);
+            animation: pulseGlow 3s infinite;
+        }
+
+        /* PARTNER LOGO CARDS & HOVER EFFECTS */
+        .partner-logo-item {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 10px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 75px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .partner-logo-item:hover {
+            background: #FFFFFF;
+            transform: translateY(-6px) scale(1.05);
+            border-color: var(--gold-bright);
+            box-shadow: 0 10px 20px rgba(128, 0, 0, 0.15), 0 0 12px rgba(255, 215, 0, 0.5);
+        }
+
+        .partner-logo-img {
+            max-height: 48px;
+            max-width: 100%;
+            object-fit: contain;
+            filter: grayscale(10%) contrast(105%);
+            transition: filter 0.3s ease;
+        }
+
+        .partner-logo-item:hover .partner-logo-img {
+            filter: grayscale(0%) contrast(110%);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1199px) {
+            .partners-inner-frame { margin: 0 80px; }
+            .side-lotus { width: 100px; }
+            .partners-heading { font-size: 1.5rem; }
+        }
+
+        @media (max-width: 991px) {
+            .partners-inner-frame { margin: 0 20px; padding-top: 35px; }
+            .side-lotus { position: relative; top: 0; transform: none; display: block; margin: 0 auto 15px auto; }
+            .lotus-left, .lotus-right { left: auto; right: auto; animation-name: floatLotus; }
+            .partners-heading { font-size: 1.3rem; }
+            .heading-swirl { width: 25px; }
+            .partner-logo-item { min-height: 65px; }
+            .partner-logo-img { max-height: 38px; }
         }
