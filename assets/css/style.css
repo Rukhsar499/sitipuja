@@ -1631,10 +1631,12 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
+        /* .form-section{
+            background: radial-gradient(circle at center, var(--puja-cream-start) 0%, var(--puja-cream-mid) 60%, var(--puja-cream-end) 100%);
+        } */
         /* MAIN BANNER CONTAINER */
         .celebrate-section {
-            background-image: url('../img/red-bg.webp');
+            background-image: url('../img/reds-bg.webp');
             background-size:cover;
             background-repeat:no-repeat;
             margin: 50px 0px;
