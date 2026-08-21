@@ -1805,6 +1805,22 @@
             .feature-desc {
                 font-size: 0.78rem;
             }
+            .brand-title-wrap img{
+                width:150px;
+            }
+            .pass-hand-wrapper {
+             margin-bottom: 0px;
+           }
+           .puja-footer {
+             background: url(../img/footer-bg.png) no-repeat;
+             background-size: cover;
+            }
+            .hfgf {
+    padding: 0px 10px;
+}
+.popular-badge-wrap {
+    padding: 0px 0px;
+}
         }
         /* CARD CONTAINER */
         .puja-form-card {
