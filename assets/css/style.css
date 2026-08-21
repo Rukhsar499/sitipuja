@@ -98,7 +98,7 @@
         .brand-title-wrap {
             display: flex;
             align-items: center;
-            justify-content: center;
+            
             gap: 12px;
         }
 
@@ -1044,8 +1044,7 @@
         /* PARTNERS SECTION CONTAINER */
         .partners-section-wrapper {
            background: radial-gradient(circle at center, var(--puja-cream-start) 0%, var(--puja-cream-mid) 60%, var(--puja-cream-end) 100%);
-          
-            padding: 40px 20px;
+           padding: 80px 0px 40px 0px;
             position: relative;
             overflow: hidden;
             
@@ -1421,4 +1420,186 @@
             .heading-swirl { width: 25px; }
             .partner-logo-item { min-height: 65px; }
             .partner-logo-img { max-height: 38px; }
+        }
+        /* ANIMATIONS */
+        @keyframes flameFlicker {
+            0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.95; filter: drop-shadow(0 0 6px #FFD700); }
+            50% { transform: scale(1.12) rotate(2deg); opacity: 1; filter: drop-shadow(0 0 12px #FF4500); }
+        }
+
+        @keyframes floatLotus {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(1deg); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(88, 0, 0, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+        }
+
+        /* BANNER CONTAINER */
+        .puja-cta-banner {
+            background: linear-gradient(90deg, var(--puja-gold-start) 0%, var(--puja-gold-mid) 50%, var(--puja-gold-end) 100%);
+            border-top: 2px solid #FFD700;
+            border-bottom: 2px solid #D4AF37;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            padding: 18px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle Background Texture */
+        .puja-cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 10%, transparent 11%);
+            background-size: 14px 14px;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        /* HEADING & TEXT */
+        .banner-heading {
+            font-family: 'Cinzel', serif;
+            color: var(--maroon-primary);
+            font-weight: 800;
+            font-size: 1.85rem;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+        }
+
+        .banner-subtext {
+            color: var(--text-dark);
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.35;
+        }
+
+        /* BUTTONS */
+        .btn-book-now {
+            background: var(--maroon-primary);
+            color: #FFFFFF !important;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            padding: 12px 28px;
+            border-radius: 8px;
+            border: 1px solid var(--maroon-border);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 12px rgba(88, 0, 0, 0.3);
+        }
+
+        .btn-book-now:hover {
+            background: var(--maroon-hover);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(88, 0, 0, 0.4);
+        }
+
+        .btn-book-now .arrow-icon {
+            width: 18px;
+            height: 18px;
+            fill: #FFD700;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-book-now:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+
+        .btn-whatsapp {
+            border: 2px solid var(--maroon-primary);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 20px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: var(--maroon-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(88, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            fill: #25D366;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+        }
+
+        .wa-title {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--maroon-primary);
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .wa-number {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        /* ILLUSTRATION ART CONTAINER */
+        .festive-art-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 70px;
+        }
+
+       .floating-lotus {
+            height: 100px;
+            width: auto;
+            animation: floatLotus 4s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+
+        .flickering-flame {
+            transform-origin: bottom center;
+            animation: flameFlicker 1.2s infinite alternate ease-in-out;
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 991px) {
+            .banner-heading {
+                font-size: 1.5rem;
+            }
+            .banner-subtext {
+                font-size: 0.82rem;
+            }
+            .festive-art-wrapper {
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .puja-cta-banner {
+                padding: 25px 0;
+            }
+            .btn-book-now, .btn-whatsapp {
+                width: 100%;
+                justify-content: center;
+            }
         }
